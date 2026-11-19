@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cliffmedia | Photography, Banking Services & Electronics</title>
+  <style>
+    :root {
+      --primary: #0f172a;      /* Deep Navy - Trust & Tech */
+      --accent: #2563eb;       /* Vibrant Blue */
+      --accent-hover: #1d4ed8;
+      --whatsapp: #16a34a;     /* WhatsApp Green */
+      --whatsapp-hover: #15803d;
+      --gold: #f59e0b;         /* Warm Gold - Photography highlight */
+      --emerald: #10b981;      /* Green - Banking trust */
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .btn-nav {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 0.55rem 1.1rem;
+      border-radius: 8px;
+    }
+
+    .btn-nav:hover {
+      background: var(--accent);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      line-height: 1;
+      padding: 0.25rem 0.4rem;
+      cursor: pointer;
+      color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 5rem 1.5rem;
+    }
+
+    .hero-grid {
+      max-width: 1150px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.2);
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      color: #93c5fd;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 540px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.15s, background 0.2s;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      color: #fff;
+    }
+
+    .btn-whatsapp:hover {
+      background: var(--whatsapp-hover);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #475569;
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-pillars {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .pillar-mini {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 1.2rem;
+      border-radius: 12px;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .pillar-icon {
+      font-size: 1.8rem;
+      background: rgba(255, 255, 255, 0.1);
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .pillar-mini h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .pillar-mini p {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    /* Sections General */
+    section {
+      padding: 4.5rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-header h2 {
+      font-size: 2.1rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header p {
+      color: var(--muted);
+    }
+
+    /* Photography Section */
+    .photo-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    }
+
+    .featured-photo-frame {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1e293b, #334155);
+      aspect-ratio: 4 / 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .featured-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-caption-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(15, 23, 42, 0.8);
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+    }
+
+    .service-list {
+      list-style: none;
+      margin: 1.5rem 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 500;
+    }
+
+    .service-list li::before {
+      content: "✓";
+      display: inline-grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(245, 158, 11, 0.15);
+      color: #d97706;
+      font-size: 0.8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* Banking Services Section */
+    .banking-section {
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cards-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--emerald);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .trust-banner {
+      margin-top: 2rem;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-weight: 500;
+    }
+
+    /* Electronics Section */
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+    }
+
+    .product-img {
+      height: 175px;
+      background: #f1f5f9;
+      display: grid;
+      place-items: center;
+      font-size: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .product-body {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+
+    .product-body h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-body p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .price {
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 0.98rem;
+    }
+
+    .btn-wa-small {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.82rem;
+      border-radius: 6px;
+      background: var(--whatsapp);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-wa-small:hover {
+      background: var(--whatsapp-hover);
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 2.5rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .contact-info-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-info-item strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-info-item span {
+      color: var(--muted);
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: var(--bg);
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid rgba(37, 99, 235, 0.3);
+      border-color: var(--accent);
+      background: #fff;
+    }
+
+    .form-status {
+      display: none;
+      padding: 0.85rem;
+      border-radius: 8px;
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Floating WhatsApp Button */
+    .floating-wa {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background: #25d366;
+      color: #fff;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+      z-index: 999;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.07);
+      background: #1ebe57;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: #94a3b8;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 850px) {
+      .hero-grid,
+      .photo-showcase,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.15rem;
+      }
+
+      .nav-container {
+        justify-content: flex-start;
+        gap: 1rem;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--border);
+        gap: 1rem;
+      }
+
+      nav ul.open {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">☰</button>
+      <a href="#" class="logo">Cliff<span>media</span></a>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="#photography" onclick="closeMenu()">Photography</a></li>
+          <li><a href="#banking" onclick="closeMenu()">Banking Services</a></li>
+          <li><a href="#electronics" onclick="closeMenu()">Electronics</a></li>
+          <li><a href="#contact" class="btn-nav" onclick="closeMenu()">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-badge">Your All-in-One Digital & Tech Hub</span>
+        <h1>Creative Photography, Trusted Banking & Quality Electronics.</h1>
+        <p>Welcome to <strong>Cliffmedia</strong>. Whether you want to capture unforgettable moments, complete fast and secure financial transactions, or shop reliable electronic devices, we have you covered under one roof.</p>
+        <div class="hero-buttons">
+          <a href="#electronics" class="btn btn-primary">Shop Electronics</a>
+          <button class="btn btn-whatsapp" onclick="openWhatsApp('Hello Cliffmedia, I would like to inquire about your services.')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.03 2C6.5 2 2 6.5 2 12.03c0 1.77.46 3.5 1.34 5.02L2 22l5.09-1.33A9.96 9.96 0 0 0 12.03 22C17.55 22 22 17.52 22 12.03 22 6.5 17.55 2 12.03 2zm5.82 14.13c-.25.7-1.45 1.34-2.01 1.41-.51.07-1.17.1-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.37-5.16-4.57-.15-.2-1.23-1.64-1.23-3.13 0-1.49.78-2.22 1.06-2.52.28-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.25.6.86 2.09.94 2.24.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.32.4-.45.53-.15.15-.31.31-.13.61.18.3.78 1.29 1.68 2.09 1.15 1.03 2.13 1.35 2.43 1.5.3.15.48.13.66-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.28.1 1.77.83 2.07.98.3.15.5.23.58.35.08.13.08.73-.17 1.43z"/></svg>
+            Chat on WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-pillars">
+        <div class="pillar-mini">
+          <div class="pillar-icon">📸</div>
+          <div>
+            <h3>Photography Studio</h3>
+            <p>Portraits, events, passport photos & high-res printing.</p>
+          </div>
+        </div>
+        <div class="pillar-mini">
+          <div class="pillar-icon">🏦</div>
+          <div>
+            <h3>Banking & Financial Services</h3>
+            <p>Fast deposits, withdrawals, bill payments & transfers.</p>
+          </div>
+        </div>
+        <div class="pillar-mini">
+          <div class="pillar-icon">💻</div>
+          <div>
+            <h3>Electronics Devices</h3>
+            <p>Smartphones, laptops, cameras, audio & accessories.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photography Section -->
+  <section id="photography">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Visual Storytelling</span>
+        <h2>Cliffmedia Photography</h2>
+        <p>Crisp, professional photographs for your personal milestones, business branding, and official documents.</p>
+      </div>
+
+      <div class="photo-showcase">
+        <div class="featured-photo-frame">
+          <!-- TIP: Replace this SVG block with your own photograph like this:
+               <img src="your-photograph.jpg" alt="Cliffmedia Studio Photograph" /> -->
+          <svg width="96" height="96" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 12px;">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+          <p style="font-weight: 600; color: #f8fafc;">Featured Studio Photograph</p>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 4px;">Replace this frame with your favorite Cliffmedia photo</p>
+          <span class="photo-caption-badge">Shot by Cliffmedia Studio</span>
+        </div>
+
+        <div>
+          <h3>Capturing Moments That Last</h3>
+          <p style="color: var(--muted); margin-top: 0.5rem;">
+            From studio portraits to outdoor events, our photography team uses modern cameras and lighting to deliver sharp, vibrant photographs.
+          </p>
+          <ul class="service-list">
+            <li>Studio Portraits & Family Shoots</li>
+            <li>Weddings, Graduations & Corporate Events</li>
+            <li>Instant Passport & Visa Photographs</li>
+            <li>Photo Retouching, Framing & Instant Printing</li>
+          </ul>
+          <button class="btn btn-whatsapp" onclick="openWhatsApp('Hello Cliffmedia, I would like to book a photography session.')">
+            Book on WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banking Services Section -->
+  <section id="banking" class="banking-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Fast & Secure</span>
+        <h2>Banking & Financial Services</h2>
+        <p>Skip long queues. Handle your daily banking, mobile money, and utility payments quickly and safely at Cliffmedia.</p>
+      </div>
+
+      <div class="cards-grid-3">
+        <div class="card">
+          <div class="card-icon">💳</div>
+          <h3>Agency Banking</h3>
+          <p>Deposit and withdraw cash across major supported banks safely, with instant receipts and zero hassle.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>Mobile Money & Transfers</h3>
+          <p>Quick MTN MoMo and Airtel Money deposits, withdrawals, float services, and instant money transfers.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🧾</div>
+          <h3>Bill & Utility Payments</h3>
+          <p>Pay for electricity (Yaka), water (NWSC), TV subscriptions, school fees, and airtime in minutes.</p>
+        </div>
+      </div>
+
+      <div class="trust-banner">
+        <span>🔒 Verified, transparent transactions with instant confirmation receipts.</span>
+        <button class="btn-wa-small" onclick="openWhatsApp('Hello Cliffmedia, which banks and mobile money services do you currently support?')">
+          Ask on WhatsApp
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Electronics Section -->
+  <section id="electronics">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tech Store</span>
+        <h2>Electronics & Devices</h2>
+        <p>Genuine smartphones, laptops, cameras, and everyday tech accessories tested for quality. Tap any item to checkout on WhatsApp.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterProducts('all', this)">All Devices</button>
+        <button class="filter-btn" onclick="filterProducts('phones', this)">Smartphones</button>
+        <button class="filter-btn" onclick="filterProducts('computers', this)">Laptops</button>
+        <button class="filter-btn" onclick="filterProducts('cameras', this)">Cameras & Audio</button>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+        <div class="product-card" data-category="phones">
+          <div class="product-img">📱</div>
+          <div class="product-body">
+            <span class="product-category">Smartphones</span>
+            <h3>Smartphone Pro 256GB</h3>
+            <p>Crisp OLED display, long-lasting battery, dual SIM, and warranty included.</p>
+            <div class="product-footer">
+              <span class="price">UGX 1,450,000</span>
+              <button class="btn-wa-small" onclick="whatsappCheckout('Smartphone Pro 256GB', 'UGX 1,450,000')">
+                WhatsApp Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="computers">
+          <div class="product-img">💻</div>
+          <div class="product-body">
+            <span class="product-category">Laptops</span>
+            <h3>Core i5 Business Laptop</h3>
+            <p>16GB RAM, 512GB SSD, lightweight design ideal for work, school, and editing.</p>
+            <div class="product-footer">
+              <span class="price">UGX 1,850,000</span>
+              <button class="btn-wa-small" onclick="whatsappCheckout('Core i5 Business Laptop', 'UGX 1,850,000')">
+                WhatsApp Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="cameras">
+          <div class="product-img">📷</div>
+          <div class="product-body">
+            <span class="product-category">Cameras & Audio</span>
+            <h3>Mirrorless 4K Camera Kit</h3>
+            <p>Includes 18-55mm lens, fast autofocus, and crystal-clear 4K video recording.</p>
+            <div class="product-footer">
+              <span class="price">UGX 2,600,000</span>
+              <button class="btn-wa-small" onclick="whatsappCheckout('Mirrorless 4K Camera Kit', 'UGX 2,600,000')">
+                WhatsApp Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="cameras">
+          <div class="product-img">🎧</div>
+          <div class="product-body">
+            <span class="product-category">Cameras & Audio</span>
+            <h3>Wireless Noise-Canceling Headphones</h3>
+            <p>Deep bass, 40-hour battery life, and fast USB-C charging.</p>
+            <div class="product-footer">
+              <span class="price">UGX 220,000</span>
+              <button class="btn-wa-small" onclick="whatsappCheckout('Wireless Noise-Canceling Headphones', 'UGX 220,000')">
+                WhatsApp Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" style="background: #ffffff; border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2>Visit or Message Cliffmedia</h2>
+        <p>Have a question about a device, want to book a photoshoot, or check banking hours? Send your details straight to our WhatsApp.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <h3 style="margin-bottom: 1.2rem;">Our Details</h3>
+          <div class="contact-info-item">
+            <strong>📍 Location</strong>
+            <span>Kampala Road / Your Business Address Here</span>
+          </div>
+          <div class="contact-info-item">
+            <strong>📞 Phone / WhatsApp</strong>
+            <span>+256 700 000 000</span>
+          </div>
+          <div class="contact-info-item">
+            <strong>✉️ Email</strong>
+            <span>info@cliffmedia.com</span>
+          </div>
+          <div class="contact-info-item">
+            <strong>🕒 Opening Hours</strong>
+            <span>Mon – Sat: 8:00 AM – 7:00 PM</span>
+          </div>
+        </div>
+
+        <form id="contact-form" onsubmit="handleFormSubmit(event)">
+          <input type="text" id="name" placeholder="Your Full Name" required />
+          <input type="tel" id="phone" placeholder="Your Phone / WhatsApp Number" required />
+          <select id="service-select" required>
+            <option value="">Select a Service...</option>
+            <option value="Photography Booking">Photography Booking</option>
+            <option value="Banking Inquiry">Banking / Mobile Money Services</option>
+            <option value="Electronics Order">Electronics Device Inquiry</option>
+          </select>
+          <textarea id="message" rows="4" placeholder="How can we help you?" required></textarea>
+          <button type="submit" class="btn btn-whatsapp">Send via WhatsApp</button>
+          <div id="form-status" class="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <button class="floating-wa" aria-label="Chat on WhatsApp" onclick="openWhatsApp('Hello Cliffmedia! I am visiting your website and would like some help.')">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.03 2C6.5 2 2 6.5 2 12.03c0 1.77.46 3.5 1.34 5.02L2 22l5.09-1.33A9.96 9.96 0 0 0 12.03 22C17.55 22 22 17.52 22 12.03 22 6.5 17.55 2 12.03 2zm5.82 14.13c-.25.7-1.45 1.34-2.01 1.41-.51.07-1.17.1-1.89-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.37-5.16-4.57-.15-.2-1.23-1.64-1.23-3.13 0-1.49.78-2.22 1.06-2.52.28-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.69.53.25.6.86 2.09.94 2.24.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.32.4-.45.53-.15.15-.31.31-.13.61.18.3.78 1.29 1.68 2.09 1.15 1.03 2.13 1.35 2.43 1.5.3.15.48.13.66-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.28.1 1.77.83 2.07.98.3.15.5.23.58.35.08.13.08.73-.17 1.43z"/>
+    </svg>
+  </button>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> <strong>Cliffmedia</strong>. Photography • Banking Services • Electronics Devices.</p>
+  </footer>
+
+  <script>
+    // IMPORTANT: Replace this with your real Cliffmedia WhatsApp number (include 256, no '+' or spaces)
+    const WHATSAPP_NUMBER = "256700000000";
+
+    // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Open WhatsApp helper
+    function openWhatsApp(messageText) {
+      const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(messageText);
+      window.open(url, "_blank");
+    }
+
+    // Electronics WhatsApp Checkout
+    function whatsappCheckout(productName, price) {
+      const text = `Hello Cliffmedia, I would like to order:\n*Device:* ${productName}\n*Price:* ${price}\nIs it currently available?`;
+      openWhatsApp(text);
+    }
+
+    // Mobile Menu
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("open");
+    }
+
+    function closeMenu() {
+      document.getElementById("nav-links").classList.remove("open");
+    }
+
+    // Electronics Filter
+    function filterProducts(category, btn) {
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const cards = document.querySelectorAll(".product-card");
+      cards.forEach(card => {
+        if (category === "all" || card.dataset.category === category) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    // Contact Form -> Sends directly to WhatsApp
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const service = document.getElementById("service-select").value;
+      const message = document.getElementById("message").value.trim();
+      const status = document.getElementById("form-status");
+
+      const waText = `Hello Cliffmedia!\n*Name:* ${name}\n*Phone:* ${phone}\n*Service:* ${service}\n*Message:* ${message}`;
+      openWhatsApp(waText);
+
+      status.style.display = "block";
+      status.textContent = `Opening WhatsApp to send your ${service} message...`;
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
